@@ -1,0 +1,85 @@
+<main class="page-shell">
+  <section class="hero" aria-labelledby="page-title">
+    <div class="hero-content">
+      <p class="eyebrow">Charcuteria artesana</p>
+      <h1 id="page-title">{{ title }}</h1>
+      <p class="hero-description">{{ description }}</p>
+      <div class="hero-actions">
+        <a href="#productos" class="primary-action">Ver productos</a>
+        <span class="hero-note">Seleccion provisional para preparar el catalogo</span>
+      </div>
+    </div>
+
+    <div class="hero-showcase" aria-label="Productos destacados">
+      @for (product of featuredProducts; track product.name) {
+        <article class="feature-card">
+          <img [src]="product.image" [alt]="product.name" />
+          <div>
+            <span>{{ product.type }}</span>
+            <strong>{{ product.name }}</strong>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="catalog-section" id="productos" aria-labelledby="products-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Catalogo</p>
+        <h2 id="products-title">Productos de charcuteria</h2>
+      </div>
+      <p>{{ filteredProducts().length }} productos visibles</p>
+    </div>
+
+    <div class="catalog-controls" aria-label="Filtros de productos">
+      <label class="search-field">
+        <span>Buscar producto</span>
+        <input
+          type="search"
+          [value]="searchTerm()"
+          (input)="updateSearch($event)"
+          placeholder="Jamon, queso, chorizo..."
+        />
+      </label>
+
+      <div class="type-filters" role="group" aria-label="Filtrar por tipo">
+        @for (type of productTypes; track type) {
+          <button
+            type="button"
+            class="filter-button"
+            [class.active]="selectedType() === type"
+            (click)="selectType(type)"
+          >
+            {{ type }}
+          </button>
+        }
+      </div>
+    </div>
+
+    @if (filteredProducts().length > 0) {
+      <div class="product-grid">
+        @for (product of filteredProducts(); track product.name) {
+          <article class="product-card">
+            <img [src]="product.image" [alt]="product.name" />
+            <div class="product-content">
+              <div>
+                <span class="product-type">{{ product.type }}</span>
+                <h3>{{ product.name }}</h3>
+              </div>
+              <p>{{ product.description }}</p>
+              <div class="product-footer">
+                <span>{{ product.format }}</span>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="empty-state">
+        <h3>No hay productos con esos filtros</h3>
+        <p>Prueba con otro tipo o cambia el texto de busqueda.</p>
+      </div>
+    }
+  </section>
+</main>
