@@ -30,7 +30,8 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "baseHref": "/charcuteria-revueltas/"
           },
           "configurations": {
             "production": {
