@@ -30,7 +30,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/charcuteria-revueltas/browser
+          path: ./dist/charcuteria-revueltas
 
   deploy:
     needs: build
