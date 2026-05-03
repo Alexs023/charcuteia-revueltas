@@ -34,7 +34,9 @@ To build the project run:
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This will compile your project and store the static site in `dist/charcuteria-revueltas/`.
+Use that folder as the publish/output directory in the hosting provider. The `index.html`,
+JavaScript, CSS, and favicon must be uploaded together from that same folder.
 
 ## Running unit tests
 
