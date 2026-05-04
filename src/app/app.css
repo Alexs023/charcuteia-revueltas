@@ -10,12 +10,16 @@
 }
 
 .page-shell {
-  width: min(1180px, calc(100% - 32px));
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.82), rgba(117, 10, 31, 0.74)),
+    url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1800&q=85");
   margin: 0 auto;
   padding: 32px 0 56px;
 }
 
 .hero {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   gap: 32px;
@@ -66,6 +70,7 @@ h1 {
   line-height: 0.96;
   font-weight: 900;
   overflow-wrap: normal;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .hero-description {
@@ -155,7 +160,9 @@ h1 {
 }
 
 .catalog-section {
+  margin: 0 auto;
   padding: 56px 0 0;
+  width: min(1180px, calc(100% - 32px));
 }
 
 .section-heading {
