@@ -5,8 +5,8 @@ type Product = {
   type: string;
   description: string;
   format: string;
-  price: string;
   image: string;
+  age: "new" | "old";
 };
 
 @Component({
@@ -16,7 +16,7 @@ type Product = {
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = 'Charcuteria Revueltas';
+  protected readonly title = 'Revueltas Charcuteria Y Especialidades';
   protected readonly description =
     'Seleccion de embutidos, quesos y conservas para preparar mesas con sabor tradicional y presentacion actual.';
 
@@ -26,76 +26,76 @@ export class App {
       type: 'Jamones',
       description: 'Corte fino, sabor intenso y curacion equilibrada para aperitivos y tablas.',
       format: 'Sobre 100 g',
-      price: 'Desde 8,90 EUR',
       image:
         'https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?auto=format&fit=crop&w=900&q=80',
+        age: "new"
     },
     {
       name: 'Chorizo extra dulce',
       type: 'Embutidos',
       description: 'Embutido clasico con pimenton suave y textura firme.',
       format: 'Pieza o loncheado',
-      price: 'Desde 4,50 EUR',
       image:
         'https://commons.wikimedia.org/wiki/Special:FilePath/Chorizo_Extra_Bellota.jpg?width=900',
+        age: "old"
     },
     {
       name: 'Salchichon curado',
       type: 'Embutidos',
       description: 'Aroma especiado y curacion lenta para un bocado redondo.',
       format: 'Pieza o loncheado',
-      price: 'Desde 4,20 EUR',
       image:
         'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=900&q=80',
+        age: "old"
     },
     {
       name: 'Queso manchego semicurado',
       type: 'Quesos',
       description: 'Queso de pasta compacta con notas lacticas y final persistente.',
       format: 'Cuna al peso',
-      price: 'Desde 6,75 EUR',
       image:
         'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=900&q=80',
+        age: "old"
     },
     {
       name: 'Lomo embuchado',
       type: 'Embutidos',
       description: 'Lonchas magras con adobo tradicional y curacion natural.',
       format: 'Sobre 100 g',
-      price: 'Desde 7,30 EUR',
       image:
         'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80',
+        age: "old"
     },
     {
       name: 'Morcilla artesana',
       type: 'Frescos',
       description: 'Producto de obrador ideal para plancha, guisos y tapas calientes.',
       format: 'Unidad',
-      price: 'Desde 3,80 EUR',
       image:
         'https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?auto=format&fit=crop&w=900&q=80',
+        age: "old"
     },
     {
       name: 'Aceitunas aliñadas',
       type: 'Conservas',
       description: 'Aceitunas con aliño mediterraneo para acompanar cualquier tabla.',
       format: 'Tarrina 250 g',
-      price: 'Desde 3,20 EUR',
       image:
         'https://commons.wikimedia.org/wiki/Special:FilePath/Aceitunas_ali%C3%B1adas_a_la_madrile%C3%B1a.jpg?width=900',
+        age: "old"
     },
     {
       name: 'Tabla surtida Revueltas',
       type: 'Tablas',
       description: 'Combinacion de jamon, embutidos y queso preparada para compartir.',
       format: '2-4 personas',
-      price: 'Desde 19,90 EUR',
       image:
         'https://images.unsplash.com/photo-1546039907-7fa05f864c02?auto=format&fit=crop&w=900&q=80',
+        age: "old"
     },
   ];
 
-  protected readonly featuredProducts = this.products.slice(0, 3);
+  protected readonly featuredProducts = this.products.filter((product) => product.age === "new")
   protected readonly productTypes = ['Todos', ...new Set(this.products.map((product) => product.type))];
   protected readonly selectedType = signal('Todos');
   protected readonly searchTerm = signal('');

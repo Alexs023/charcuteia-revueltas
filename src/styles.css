@@ -3,12 +3,24 @@
 }
 
 html {
+  width: 100%;
   scroll-behavior: smooth;
+  background: #171717;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 0;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background: #171717;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  min-height: 100dvh;
 }
 
 button,
