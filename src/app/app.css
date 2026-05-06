@@ -11,7 +11,10 @@
 .page-shell {
   background:
     linear-gradient(135deg, rgba(0, 0, 0, 0.82), rgba(117, 10, 31, 0.74)),
-    url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1800&q=85");
+    url('/background2.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   min-height: 100dvh;
   margin: 0;
