@@ -338,23 +338,7 @@ h3 {
   line-height: 1.55;
 }
 
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  align-items: center;
-  margin-top: auto;
-  padding-top: 16px;
-  border-top: 1px solid #f1f1f1;
-  color: #78716c;
-  font-size: 0.92rem;
-  text-align: center;
-}
 
-.product-footer strong {
-  color: #be123c;
-  text-align: right;
-}
 
 .empty-state {
   margin-top: 24px;
