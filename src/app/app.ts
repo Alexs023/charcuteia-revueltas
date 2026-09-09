@@ -27,7 +27,7 @@ export class App {
       description: 'Corte fino, sabor intenso y curacion equilibrada para aperitivos y tablas.',
       format: 'Sobre 100 g',
       image:
-        '/Empanada.jpeg',
+        'Empanada.jpeg',
         age: "new"
     },
     {
