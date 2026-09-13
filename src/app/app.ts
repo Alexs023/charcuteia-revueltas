@@ -46,7 +46,16 @@ export class App {
       format: 'Pieza o loncheado',
       image:
         '',
-        age: "old"
+      age: "old"
+    },
+    {
+      name: 'Tortilla de patatas',
+      type: 'Tortillas',
+      description: 'Tortillas de patatas con cebolla caramelizada.',
+      format: 'Pieza',
+      image:
+        '',
+      age: "old"
     }
   ];
 
